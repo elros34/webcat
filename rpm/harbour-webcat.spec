@@ -13,7 +13,7 @@ Name:       harbour-webcat
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    A simple webbrowser with tab support
-Version:    3.1.0
+Version:    3.1.0+mimehandler
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE
@@ -25,6 +25,9 @@ BuildRequires:  pkgconfig(sailfishapp) >= 0.0.10
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5DBus)
+BuildRequires:  pkgconfig(Qt5Sql)
+BuildRequires:  pkgconfig(Qt5Concurrent)
 BuildRequires:  desktop-file-utils
 
 %description
@@ -69,6 +72,8 @@ desktop-file-install --delete-original       \
 /usr/bin
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{name}-open-url.desktop
+%{_datadir}/dbus-1/services/org.harbour.webcat.service
 %{_datadir}/%{name}/qml
 %{_bindir}
 # >> files
