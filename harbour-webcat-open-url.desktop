@@ -1,10 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=Open with Webcat
-Name[de]=Öffnen mit Webcat
+Name=Webcat
+Name[de]=Webcat
 Icon=harbour-webcat
-NotShowIn=X-MeeGo;
+NoDisplay=true
 MimeType=text/html;x-scheme-handler/http;x-scheme-handler/https;
 X-Maemo-Service=org.harbour.webcat
 X-Maemo-Method=org.harbour.webcat.openUrl
-Hidden=true;

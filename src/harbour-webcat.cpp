@@ -120,12 +120,12 @@ int main(int argc, char *argv[])
         noHomepage = true;
     }
     else if (QString(argv[1]) == "--set-default") {
-        printf("Setting Webcat as default browser...\n");
-        setDefault = true;
+        //printf("Setting Webcat as default browser...\n");
+        //setDefault = true;
     }
     else if (QString(argv[1]) == "--reset-default") {
-        printf("Resetting to default browser...\n");
-        resetDefault = true;
+        //printf("Resetting to default browser...\n");
+        //resetDefault = true;
     }
     else if (QString(argv[1]) == "--new-window") {
         openNewWindow = true;
@@ -203,11 +203,11 @@ int main(int argc, char *argv[])
 
     MyClass myClass(view);
     if (setDefault) {
-        myClass.setDefaultBrowser();
+        //myClass.setDefaultBrowser();
         return 0;
     }
     else if (resetDefault) {
-        myClass.resetDefaultBrowser();
+        //myClass.resetDefaultBrowser();
         return 0;
     }
 
@@ -219,10 +219,10 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(openPrivateNewWindow(QString)));
     QObject::connect(object, SIGNAL(openWithvPlayerExternal(QString)),
                      &myClass, SLOT(openWithvPlayer(QString)));
-    QObject::connect(object, SIGNAL(setDefaultBrowser()),
-                     &myClass, SLOT(setDefaultBrowser()));
-    QObject::connect(object, SIGNAL(resetDefaultBrowser()),
-                     &myClass, SLOT(resetDefaultBrowser()));
+//    QObject::connect(object, SIGNAL(setDefaultBrowser()),
+//                     &myClass, SLOT(setDefaultBrowser()));
+//    QObject::connect(object, SIGNAL(resetDefaultBrowser()),
+//                     &myClass, SLOT(resetDefaultBrowser()));
     QObject::connect(object, SIGNAL(createDesktopLauncher(QString,QString,QString)),
                      &myClass, SLOT(createDesktopLauncher(QString,QString,QString)));
     QObject::connect(object, SIGNAL(openExternally(QString)),

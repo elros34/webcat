@@ -13,7 +13,7 @@ Name:       harbour-webcat
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    A simple webbrowser with tab support
-Version:    3.1.0
+Version:    3.1.0+mimehandler
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE
@@ -69,6 +69,8 @@ desktop-file-install --delete-original       \
 /usr/bin
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{name}-open-url.desktop
+%{_datadir}/dbus-1/services/org.harbour.webcat.service
 %{_datadir}/%{name}/qml
 %{_bindir}
 # >> files

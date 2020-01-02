@@ -131,10 +131,10 @@ TRANSLATIONS += translations/harbour-webcat-de.ts \
 QT += dbus
 
 dbus.files = org.harbour.webcat.service
-dbus.path = /usr/share/harbour-webcat
+dbus.path = /usr/share/dbus-1/services
 
 opendesktopfile.files = harbour-webcat-open-url.desktop
-opendesktopfile.path = /usr/share/harbour-webcat
+opendesktopfile.path = /usr/share/applications
 
 QT += sql
 
