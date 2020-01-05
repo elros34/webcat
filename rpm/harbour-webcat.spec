@@ -21,6 +21,7 @@ URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-webcat.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
+Requires:   awk
 BuildRequires:  pkgconfig(sailfishapp) >= 0.0.10
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -58,6 +59,12 @@ rm -rf %{buildroot}
 %qmake5_install
 
 # >> install post
+[ -z $LOGNAME ] && LOGNAME="$(loginctl --no-legend list-users | awk '{print $2}' | head -n1)"
+if [ -f /home/$LOGNAME/.local/share/applications/mimeinfo.cache ]; then
+    echo "Removing local mimeinfo.cache"
+    /bin/rm -f /home/$LOGNAME/.local/share/applications/mimeinfo.cache
+fi
+update-desktop-database
 # << install post
 
 desktop-file-install --delete-original       \
